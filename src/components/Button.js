@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Button = ({ text, bgColor, bgColorHover, onClick }) => {
+const Button = ({ text, bgColor, bgColorHover, onClick, shape }) => {
   return (
     <>
         <button 
           onClick={onClick}
-          className={`${bgColor} rounded-full w-24 py-2 text-center text-black font-bold hover:text-white ${bgColorHover}`}>
+          className={`${bgColor} rounded-lg  py-2 px-4 text-center text-black font-bold hover:text-white ${bgColorHover}`}>
           {text}
         </button>
     </>

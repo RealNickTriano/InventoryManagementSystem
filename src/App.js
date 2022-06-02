@@ -44,6 +44,7 @@ function App() {
   return (
     <div className="container m-auto mt-6">
       <Header />
+      {view && <ItemView item={item} onClick={() => setView(false)}/>}
       <form onSubmit={onSearch} className="mt-10 text-center flex justify-center items-center space-x-6">
           <SearchInput name='itemName' onChange={updateForm} placeholder='Item Name'/>
           <SearchInput name='department' onChange={updateForm} placeholder='Department'/>
@@ -53,7 +54,6 @@ function App() {
           <Button text='Search' bgColor='bg-blue-400' bgColorHover='hover:bg-blue-600'/>
       </form>
       <ResultTable onClick={viewItem} />
-      {view && <ItemView item={item} onClick={() => setView(false)}/>}
     </div>
   );
 }

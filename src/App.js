@@ -5,6 +5,7 @@ import SearchInput from "./components/SearchInput";
 import ResultTable from "./components/ResultTable";
 import { useState } from "react";
 import ItemView from "./components/ItemView";
+import Cover from "./components/Cover";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
   return (
     <div className="container m-auto mt-6">
       <Header />
+      {view && <Cover />}
       {view && <ItemView item={item} onClick={() => setView(false)}/>}
       <form onSubmit={onSearch} className="mt-10 text-center flex justify-center items-center space-x-6">
           <SearchInput name='itemName' onChange={updateForm} placeholder='Item Name'/>

@@ -4,8 +4,8 @@ import Button from './Button';
 
 const ItemView = ({ item, onClick }) => {
   return (
-    <div className='bg-white rounded-md shadow-md fixed p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3'>
-      <div className='rounded-lg bg-rose-50 p-6'>
+    <div className='z-20 bg-white rounded-md shadow-md fixed p-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3'>
+      <div className='rounded-lg bg-white p-6'>
         <div className="flex justify-end items-center">
           <h1 className='font-bold text-3xl text-center ml-auto'>{item.product}</h1>
           <button className='ml-auto' onClick={onClick}>

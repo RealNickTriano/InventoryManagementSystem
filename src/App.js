@@ -51,9 +51,14 @@ function App() {
           <SearchInput name='itemName' onChange={updateForm} placeholder='Item Name'/>
           <SearchInput name='department' onChange={updateForm} placeholder='Department'/>
           <SearchInput name='brand' onChange={updateForm} placeholder='Brand'/>
-          <SearchInput name='orderID' onChange={updateForm} placeholder='OrderID'/>
           <SearchInput name='itemID' onChange={updateForm} placeholder='ItemID'/>
           <Button text='Search' bgColor='bg-blue-400' bgColorHover='hover:bg-blue-600'/>
+      </form>
+      <form onSubmit={onSearch} className="mt-10 text-center flex justify-center items-center space-x-6">
+          <SearchInput name='orderID' onChange={updateForm} placeholder='OrderID'/>
+          <SearchInput name='pastOrders' onChange={updateForm} placeholder='Past Orders'/>
+          <SearchInput name='futureOrders' onChange={updateForm} placeholder='Future Orders'/>
+          <Button text='Orders' bgColor='bg-blue-400' bgColorHover='hover:bg-blue-600'/>
       </form>
       <ResultTable onClick={viewItem} />
     </div>

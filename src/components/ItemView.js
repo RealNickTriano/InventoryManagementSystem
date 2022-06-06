@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsBackspaceReverseFill } from "react-icons/bs";
-import Button from './Button';
+import { Button } from '@mui/material'
 
 const ItemView = ({ item, onClick }) => {
   return (
@@ -12,12 +12,12 @@ const ItemView = ({ item, onClick }) => {
             <BsBackspaceReverseFill size={28} className='text-red-600'/>
           </button>
         </div>
-        <img className='my-6 mx-auto' src={item.image} alt="" />
+        <img className='my-6 mx-auto' src={item.image} alt="product" />
 
         <h1 className='text-center my-4 text-xl font-medium underline'>Prices</h1>
         <ul className='flex justify-around items-center my-4 font-medium'>
           <li>Price: ${item.price}</li>
-          <li>Special: ${item.salePrice.toFixed(2)}</li>
+          <li>Special: ${Number(item.salePrice).toFixed(2)}</li>
         </ul>
 
         <h1 className='text-center my-4 text-xl font-medium underline'>Previous Order</h1>
@@ -30,7 +30,7 @@ const ItemView = ({ item, onClick }) => {
 
         <h1 className='text-center my-4 text-xl font-medium underline'>Future Order</h1>
         <ul className='flex justify-around items-center my-4 font-medium'>
-          <li><Button text='Place Order' bgColor='bg-lime-400' bgColorHover='hover:bg-lime-600' /></li>
+          <li><Button>Place Order</Button></li>
         </ul> 
       </div>
     </div>

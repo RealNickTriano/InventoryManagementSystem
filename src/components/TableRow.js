@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductImage from './ProductImage'
-import Button from './Button'
+import { Button } from '@mui/material'
 
 const TableRow = ({ item, onClick }) => {
 
@@ -17,7 +17,7 @@ const TableRow = ({ item, onClick }) => {
         <td>{item.perCase}</td>
         <td>${item.price.toFixed(2)}</td>
         <td>${item.salePrice.toFixed(2)}</td>
-        <td><Button onClick={onClick} text='View' bgColor='bg-green-200' bgColorHover='hover:bg-green-600'/></td>
+        <td><Button onClick={onClick}>View</Button></td>
     </tr>
   )
 }

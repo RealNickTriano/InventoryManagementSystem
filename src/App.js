@@ -3,8 +3,9 @@ import Header from "./components/Header";
 import { useState } from "react";
 import ItemView from "./components/ItemView";
 import Cover from "./components/Cover";
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, AppBar, Toolbar, Typography} from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
+import ResponsiveAppBar from "./components/ResponsiveAppBar";
 
 function App() {
 
@@ -100,7 +101,10 @@ function App() {
 
   return (
     <div className="container m-auto mt-6">
-      <Header />
+      <ResponsiveAppBar />
+      <Typography variant="button">
+        <Header title='Item Search'/>
+      </Typography>
       {view && <Cover />}
       {view && <ItemView item={item} onClick={() => setView(false)}/>}
       <form onSubmit={onSearch} className="mt-10 text-center flex justify-center items-center space-x-6">
@@ -110,13 +114,15 @@ function App() {
           <TextField id="itemID" label='ItemID' variant="outlined" onChange={updateForm}></TextField>
           <Button>Search</Button>
       </form>
-      <div className="container m-auto mt-6 h-screen">
+      <div className="flex h-full mx-auto mt-10" style={{width: 1050}}>
         <DataGrid 
           rows={rows} 
           columns={columns} 
+          align='center'
           sx={{
             overflow: 'hidden'
           }}
+          autoHeight={true}
         />
       </div>
     </div>
